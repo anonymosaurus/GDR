@@ -174,17 +174,21 @@ est[paste0("R|", TOTAL)] # sum of the GD-R values (= model R)
 est[c("model|R", "model|R2")]
 ```
 
-Elements of the result:
+Elements of the result (`m` is the method code, `X` a predictor name):
 
-| Key | Content |
-|---|---|
-| `beta\|X` | standardized regression coefficient of predictor X |
-| `<m>\|X`, `<m>\|<total>` | GD value (or RW value) of predictor X for method `m`, and the sum across predictors (`TOTAL` is the string `"<total>"`) |
-| `<m>%\|X`, `<m>#\|X` | percentage-based value and rank |
-| `model\|R`, `model\|R2` | R and R² of the full predictor set under the specified weighting |
-| `reg\|R`, `reg\|R2` | regression-based R and R² of the full predictor set |
-| `wt\|X` | user-specified weight of predictor X (user-specified weights only) |
-| `inc\|<step>\|<stat>` | conditional incremental validity; `<step>` is `base`, `add:X`, or `all`; `<stat>` is `R`, `R2`, `dR`, or `dR2` |
+```text
+beta|X              standardized regression coefficient of predictor X
+m|X                 GD value (or RW value) of predictor X for method m
+m|<total>           sum of the values across predictors (TOTAL is the string "<total>")
+m%|X                percentage-based value of predictor X
+m#|X                rank of predictor X (1 = most important)
+model|R, model|R2   R and R² of the full predictor set under the specified weighting
+reg|R, reg|R2       regression-based R and R² of the full predictor set
+wt|X                user-specified weight of predictor X (user-specified weights only)
+inc|step|stat       conditional incremental validity
+                      step: base, add:X, or all
+                      stat: R, R2, dR, or dR2
+```
 
 ### Conditional incremental validity
 
